@@ -12,7 +12,7 @@ class AuthController extends Controller
         $username = $request->input('username');
         $password = $request->input('password');
 
-        $user = DB::table('playsms_tbluser')->where('username', $username)->first();
+        $user = DB::table('playsms_tblUser')->where('username', $username)->first();
 
         if ($user && $this->checkPassword($password, $user->password)) {
             // L'authentification a réussi

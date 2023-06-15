@@ -5,6 +5,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+    <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
 
     <style>
         body {
@@ -93,9 +95,29 @@
            }
 
            .content {
-            min-height: 100%;
+            min-height: 80%;
             padding-bottom: 40px; /* La hauteur du footer */
             }
+            .search-form {
+             margin-bottom: 20px;
+            }
+
+            .search-input {
+              padding: 6px;
+              width: 200px;
+            }
+
+            .search-button {
+              padding: 6px 12px;
+              background-color: #007bff;
+              border: none;
+              color: white;
+            }
+
+            .search-button:hover {
+             background-color: #0069d9;
+            }
+            
         </style>
     </head>
     
@@ -111,18 +133,40 @@
             <div class="dropbtn">Mon compte</div>
             <div class="dropdown-content">
                 <a href="#">Compose message</a>
-                <a href="#">boîte de réception </a>
-                <a href="#">Shedule message</a>
+                <a href="{{ route('showData') }}">Modele de Message</a>
+                <a href="{{ route('inbox') }}">boîte de réception </a>
+                <a href="{{ route('progsms') }}">programmer un message</a>
                 <a href="#">Send from file</a>
             </div>
         </div>
         <div class="dropdown">
-            <div class="dropbtn">Settings</div>
+            <div class="dropbtn">paramétre</div>
             <div class="dropdown-content">
-                <a href="#">jojjoo</a>
-                <a href="#">tootot </a>
-                <a href="#">tkktktk</a>
-                <a href="#">oddood</a>
+                <a href="#">route SMS entrants</a>
+                <a href="#">route sortie SMS</a>
+                <a href="#">gérer les comptes</a>
+                <a href="#">simuler des sms entrants </a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <div class="dropbtn">Caracteristiques</div>
+            <div class="dropdown-content">
+                <a href="#">gérer le conseil</a>
+                <a href="#">gérer la commande</a>
+                <a href="#">gérer le questionnaires</a>
+                <a href="#">gérer s'abonner</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <div class="dropbtn">Rapports</div>
+            <div class="dropdown-content">
+                <a href="{{ route('featuresms') }}">My feature messages</a>
+                <a href="#">Mes messages envoyés</a>
+                <a href="{{ route('sandbox') }}">Sandbox</a>
+                <a href="#">Liste de mes opérations de crédit</a>
+               
             </div>
         </div>
         <div class="collapse navbar-collapse" id="navbarNav">
@@ -143,14 +187,15 @@
     </nav>
     <div class="content">
         <!-- Le contenu de votre page -->
-        
+        @yield('content')
+        @yield('scripts')
         <!-- Votre code HTML existant -->
         
     </div>
 
     <!-- Footer -->
     <div class="footer">
-        <p>© 2023 Wimex. Tous droits réservés.</p>
+        <p>© 2023 Wimex . Tous droits réservés.</p>
     </div>
 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

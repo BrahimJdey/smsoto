@@ -13,7 +13,7 @@ class User extends Authenticatable
     use HasApiTokens, HasFactory, Notifiable;
 
     protected $connection = 'mysql';
-    protected $table = 'playsms_tbluser';
+    protected $table = 'playsms_tblUser';
     protected $fillable = [
         'username', 'password',
     ];

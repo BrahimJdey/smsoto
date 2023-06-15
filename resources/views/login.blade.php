@@ -43,7 +43,7 @@
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-body">
-                        <h2 class="card-title text-center">Connexion</h2>
+                        <h2 class="card-title text-center">SMS OTP</h2>
                         <form action="{{ route('login') }}" method="POST">
                             @csrf
                             <div class="form-group">
