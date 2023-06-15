@@ -20,4 +20,11 @@ class ReportsController extends Controller
          //$items = progsms::all();
          return view('Report.sandbox');
      }
+
+     //Mes messages envoyés
+     public function smsenvoye()
+     {
+         //$items = progsms::all();
+         return view('Report.smsenvoye');
+     }
 }

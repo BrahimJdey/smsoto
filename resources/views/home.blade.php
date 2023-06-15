@@ -163,7 +163,7 @@
             <div class="dropbtn">Rapports</div>
             <div class="dropdown-content">
                 <a href="{{ route('featuresms') }}">My feature messages</a>
-                <a href="#">Mes messages envoyés</a>
+                <a href="{{ route('smsenvoye') }}">Mes messages envoyés</a>
                 <a href="{{ route('sandbox') }}">Sandbox</a>
                 <a href="#">Liste de mes opérations de crédit</a>
                

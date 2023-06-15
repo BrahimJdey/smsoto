@@ -60,6 +60,9 @@ Route::post('/store', [smsmodelController::class, 'store'])->name('store');
 Route::get('/featuresms', [ReportsController::class, 'featuresms'])->name('featuresms'); 
 //sandbox
 Route::get('/sandbox', [ReportsController::class, 'sandbox'])->name('sandbox'); 
+//My sent messages
+Route::get('/smsenvoye', [ReportsController::class, 'smsenvoye'])->name('smsenvoye'); 
+
 ////myaccount////
 //inbox
 Route::get('/inbox', [MyaccountController::class, 'inbox'])->name('inbox');
