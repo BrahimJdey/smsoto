@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.7.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <title>page home</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
@@ -13,7 +17,7 @@
             background-color: #f8f9fa;
         }
     </style>
-    <head>
+    
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <style>
             .dropbtn {
@@ -81,7 +85,6 @@
             }
             .footer {
             background-color: #f8f9fa;
-            padding: 20px;
             text-align: center;
             position: absolute;
             bottom: 0;
@@ -119,56 +122,82 @@
             }
             
         </style>
-    </head>
+     
     
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         
-        <a class="nav-link" href="{{ route('home') }}">Mon application</a>
+        <a class="nav-link" href="{{ route('home') }}">SMS OTP</a>
          
         
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Mon compte
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Compose message</a>
+              <a class="dropdown-item" href="{{ route('contact.index') }}">Contact</a>
+              <a class="dropdown-item" href="{{ route('showData') }}">Modele de Message</a>
+              <a class="dropdown-item" href="{{ route('inbox') }}">boîte de réception </a>
+              <a class="dropdown-item" href="{{ route('progsms') }}">programmer un message</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Send from file</a>
+            </div>
+          </li>
+         
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                paramétre
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Compose message</a>
+              <a class="dropdown-item" href="#">route SMS entrants</a>
+              <a class="dropdown-item" href="#">route sortie SMS</a>
+              <a class="dropdown-item"  href="#">gérer les comptes </a>
+              <a class="dropdown-item" href="#">simuler des sms entrants </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">blalal</a>
+            </div>
+          </li>
         
-        <div class="dropdown">
-            <div class="dropbtn">Mon compte</div>
-            <div class="dropdown-content">
-                <a href="#">Compose message</a>
-                <a href="{{ route('showData') }}">Modele de Message</a>
-                <a href="{{ route('inbox') }}">boîte de réception </a>
-                <a href="{{ route('progsms') }}">programmer un message</a>
-                <a href="#">Send from file</a>
+
+
+         
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Caracteristiques
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">gérer le conseil</a>
+              <a class="dropdown-item" href="#">gérer la commande</a>
+              <a class="dropdown-item" href="#">gérer le questionnaires</a>
+              <a class="dropdown-item" href="#">gérer s'abonner</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Something else here</a>
             </div>
-        </div>
-        <div class="dropdown">
-            <div class="dropbtn">paramétre</div>
-            <div class="dropdown-content">
-                <a href="#">route SMS entrants</a>
-                <a href="#">route sortie SMS</a>
-                <a href="#">gérer les comptes</a>
-                <a href="#">simuler des sms entrants </a>
+          </li>
+         
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Rapports
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="{{ route('featuresms') }}">My feature messages</a>
+              <a class="dropdown-item" href="{{ route('smsenvoye') }}">Mes messages envoyés</a>
+              <a class="dropdown-item" href="{{ route('sandbox') }}">Sandbox</a>
+              <a class="dropdown-item" href="#">Liste de mes opérations de crédit</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Something else here</a>
             </div>
+          </li>
+        </ul>
         </div>
 
-        <div class="dropdown">
-            <div class="dropbtn">Caracteristiques</div>
-            <div class="dropdown-content">
-                <a href="#">gérer le conseil</a>
-                <a href="#">gérer la commande</a>
-                <a href="#">gérer le questionnaires</a>
-                <a href="#">gérer s'abonner</a>
-            </div>
-        </div>
+        
 
-        <div class="dropdown">
-            <div class="dropbtn">Rapports</div>
-            <div class="dropdown-content">
-                <a href="{{ route('featuresms') }}">My feature messages</a>
-                <a href="{{ route('smsenvoye') }}">Mes messages envoyés</a>
-                <a href="{{ route('sandbox') }}">Sandbox</a>
-                <a href="#">Liste de mes opérations de crédit</a>
-               
-            </div>
-        </div>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 
@@ -185,7 +214,7 @@
 
         
     </nav>
-    <div class="content">
+    <div class="container">
         <!-- Le contenu de votre page -->
         @yield('content')
         @yield('scripts')
@@ -195,7 +224,7 @@
 
     <!-- Footer -->
     <div class="footer">
-        <p>© 2023 Wimex . Tous droits réservés.</p>
+        <p>© 2023 interlink.mr Tous droits réservés.</p>
     </div>
 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

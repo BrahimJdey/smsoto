@@ -15,9 +15,10 @@ use Illuminate\Support\Facades\Route;
 
  
 
-
+use App\Http\Controllers\GroupeController;
 use App\Http\Controllers\smsmodelController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\MyaccountController;
 use App\Http\Controllers\PlaySMSController;
 use App\Http\Controllers\ReportsController;
@@ -66,3 +67,10 @@ Route::get('/smsenvoye', [ReportsController::class, 'smsenvoye'])->name('smsenvo
 ////myaccount////
 //inbox
 Route::get('/inbox', [MyaccountController::class, 'inbox'])->name('inbox');
+
+
+Route::resource("/contact", ContactController::class);
+Route::get('export', [ContactController::class, 'export'])->name('export');
+Route::get('imp', [ContactController::class, 'imp'])->name('imp');
+Route::post('import', [ContactController::class, 'import'])->name('import');
+Route::resource("/groupe", GroupeController::class);
